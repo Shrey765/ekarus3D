@@ -1,14 +1,19 @@
 import React from 'react';
+import EditorPanel from './EditorPanel';
 
 function SideBar(){
 
     return(
-        <div className=" h-screen bg-slate-800 text-white w-64 p-4 flex flex-col">
-            <div className="inline-block mt-0 pb-2.5 font-semibold border-b-2 border-[#007aff] font-['Poppins',_sans-serif]">
-                <h1 className="text-[22px] font-bold ml-2.5">UI Customizer</h1>
+        <div className="w-[350px] bg-gray-50 border-r border-gray-200 flex flex-col">
+            <div className="p-4 border-b border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-800">UI Customizer</h3>
             </div>
-            <nav className='flex flex-col mt-10 gap-1'>
-                 
+            <nav className='flex-grow overflow-y-auto p-4 space-y-4'>
+                 <EditorPanel title="layout">
+                    <Container 
+                        label=""
+                    />
+                 </EditorPanel>
             </nav>
         </div>
     )

@@ -2,9 +2,9 @@
 export default function EditorPanel({title, children}){
 
     return(
-        <div className="mb-6 border-b border-b-[#f0f0f0] pb-4 last:border-b-0">
-            <h3 className="font-['Inter',_sans-serif] font-semibold text-base text-[#333] mt-0 mb-4">{title}</h3>
-            {children}
+        <div className="bg-white border border-gray-200 rounded-lg p-4">
+            <h4 className="text-sm font-semibold text-gray-600 border-b border-gray-200 pb-2 mb-4">{title}</h4>
+            <div className="space-y-4">{children}</div>
         </div>
     )
 }

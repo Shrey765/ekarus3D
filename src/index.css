@@ -4,6 +4,14 @@
 
 @layer components{
   .label{
-    @apply text-[#555] flex-shrink-0 mr-2.5
+    @apply block text-xs font-medium text-gray-500 mb-1.5;
+  }
+
+  .select{
+    @apply min-w-[120px] rounded-md border border-[#ccc] bg-white px-2.5 py-1.5 text-sm font-['Inter',_sans-serif];
+  }
+
+  .color-input{
+    @apply w-full h-10 p-1 bg-white border border-gray-300 rounded-md cursor-pointer;
   }
 }

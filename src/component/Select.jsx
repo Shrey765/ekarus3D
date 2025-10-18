@@ -8,13 +8,14 @@ const Select = forwardRef(function Select({
 }, ref){
     const id = useId();
     return(
-        <div>
+        <div className='select'>
             {label && <label className='label' htmlFor={id}>
                 {label}
             </label>}
             <select 
                 id={id}
-                className={className}
+                className={`w-full text-sm border-gray-300 rounded-md shadow-sm 
+                    focus:ring-indigo-500 focus:border-indigo-500 ${className}`}
                 ref={ref}
                 {...props}
             >

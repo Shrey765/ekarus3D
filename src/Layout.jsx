@@ -1,12 +1,11 @@
-import { Outlet } from "react-router-dom"
 import SideBar from "./SideBar"
 
-export default function Layout(){
+export default function Layout({children}){
     return(
-        <div className="flex h-screen overflow-hidden">
+        <div className="flex min-h-screen bg-gray-100 font-sans">
             <SideBar />
-            <div className="flex-1 overflow-y-auto main-view active">
-                <Outlet />
+            <div className="flex-grow flex-center justify-center p-8">
+                {children}
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
-export default function Container({label, className}){
+export default function Container({children}){
     return(
-        <div className={`flex justify-between items-center mb-[12px] ${className}`}>
-            
+        <div>
+            {children}
         </div>
     )
 }

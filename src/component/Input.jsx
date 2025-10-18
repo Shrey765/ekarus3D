@@ -9,13 +9,14 @@ const Input = forwardRef(function Input({
     const id = useId();
 
     return (
-        <div>
+        <div className="flex justify-between items-center text-sm mb-[12px]">
             {label && <label className='label' htmlFor={id}>{label}</label>}
             <input 
                 id={id}
                 type={type}
-                className={className}
-                {...props}
+                className={`w-full text-sm border-gray-300 rounded-md shadow-sm 
+                    focus:ring-indigo-500 focus:border-indigo-500 ${className}`}
+                {...props} 
                 ref = {ref}
             />
         </div>
