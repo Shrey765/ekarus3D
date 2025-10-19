@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global responsive container utility */
+@layer utilities {
+  .container-responsive {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+  }
+  @media (min-width: 640px) {
+    .container-responsive { padding-left: 1.25rem; padding-right: 1.25rem; }
+  }
+  @media (min-width: 1024px) {
+    .container-responsive { padding-left: 2rem; padding-right: 2rem; }
+  }
+}
+
 /* ---------- Components layer: shared atoms ---------- */
 @layer components {
   .color-cute-input {
@@ -49,5 +66,13 @@
 @layer utilities {
   .shadow-xs {
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+}
+
+/* Fluid typography helper class */
+@layer utilities {
+  .text-fluid-base {
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.5;
   }
 }

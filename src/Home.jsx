@@ -15,14 +15,14 @@ export default function Home() {
 
   return (
     <div
-      className={`max-w-6xl w-full mx-auto mt-8 lg:mt-20
+      className={`mx-auto w-full max-w-6xl mt-4 sm:mt-8 lg:mt-10
                   shadow-xl hover:shadow-2xl transition-shadow
                   flex flex-col lg:flex ${config.typography.fontFamily} ${config.typography.fontWeight} ${layoutClasses}
                   ring-1 ring-gray-200 relative`}
       style={{
-        fontSize: `${config.typography.fontSize}px`,
+        fontSize: `clamp(14px, 1.2vw, ${config.typography.fontSize}px)`,
         backgroundColor: config.general.sectionBackgroundColor,
-        padding: `${config.general.containerPadding}px`,
+        padding: `clamp(12px, 3vw, ${config.general.containerPadding}px)`,
         borderRadius: `${config.general.cardBorderRadius}px`,
         borderColor: config.stroke.color,
         borderWidth: `${config.stroke.weight}px`,
@@ -45,23 +45,23 @@ export default function Home() {
           >
             {/* Thumbnails placeholder */}
             <div
-              className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
+              className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
               style={{ borderRadius: `${config.gallery.borderRadius}px` }}
             />
             <div
-              className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
+              className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
               style={{ borderRadius: `${config.gallery.borderRadius}px` }}
             />
             <div
-              className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
+              className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
               style={{ borderRadius: `${config.gallery.borderRadius}px` }}
             />
           </div>
 
-          <div className="flex-grow">
+          <div className="flex-grow min-w-0">
             {/* Main image placeholder */}
             <div
-              className="w-full aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg border border-gray-200"
+              className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg border border-gray-200"
               role="img"
               aria-label="Main product preview"
             />
@@ -78,7 +78,7 @@ export default function Home() {
           overflow-auto custom-scroll
         `}
       >
-        <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight mb-4 lg:mb-6">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight mb-3 sm:mb-4 lg:mb-6">
           Cozy Lounge Chair
         </h3>
 
@@ -179,21 +179,21 @@ export default function Home() {
         </div>
 
         <div
-          className="mt-6 bg-transparent pt-6 border-t bg-white/70 rounded-lg flex justify-center items center sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+          className="mt-4 sm:mt-6 bg-transparent pt-4 sm:pt-6 border-t bg-white/70 rounded-lg flex flex-wrap gap-4 justify-between items-center sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
           style={{ borderColor: config.stroke.color }}
         >
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center">
             <div>
               <p className="text-xs uppercase tracking-wide text-gray-500">
                 Product Price
               </p>
-              <p className="text-2xl font-bold text-gray-900">$ 200</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">$ 200</p>
             </div>
           </div>
 
           <div className={`flex ${config.button.alignment}`}>
             <Button
-              className={`text-white ml-4 font-bold py-3 px-6 transition-all duration-200 ${config.button.shadow}
+              className={`text-white ml-0 sm:ml-4 font-bold py-2.5 sm:py-3 px-5 sm:px-6 transition-all duration-200 ${config.button.shadow}
                           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
                           active:scale-[0.98]`}
               style={{
