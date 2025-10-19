@@ -1,11 +1,12 @@
 import { Container, Input, Select } from "../component";
 import { useConfig } from "../context/ConfigProvider";
+import EditorPanel from "../EditorPanel";
 
 export default function LayoutEditor() {
     const { config, setConfig, updateConfig } = useConfig();
     
     return (
-        <EditorSection title="General Layout">
+        <EditorPanel title="General Layout">
             <Container >
                 <Select 
                     label="Layout Style"
@@ -35,11 +36,11 @@ export default function LayoutEditor() {
              <Container>
                 <Input 
                     label="Section Background"
-                    clasName='color-input'
+                    className='color-input'
                     type='color'
                     value={config.general.sectionBackgroundColor} 
                     onChange={(e) => updateConfig('general', 'sectionBackgroundColor', e.target.value)} />
             </Container>
-        </EditorSection>
+        </EditorPanel>
     );
 }

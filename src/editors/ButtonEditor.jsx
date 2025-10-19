@@ -1,12 +1,13 @@
 import { Container, Input, Select } from "../component";
 import { useConfig } from "../context/ConfigProvider";
+import EditorPanel from "../EditorPanel";
 
 export default function ButtonEditor() {
     const { config, updateConfig } = useConfig();
     const { borderRadius, shadow, alignment, backgroundColor, textColor } = config.button;
 
     return (
-        <EditorSection title="Button">
+        <EditorPanel title="Button">
             <Container>
                 <Input 
                     label="Border Radius (px)"
@@ -58,6 +59,6 @@ export default function ButtonEditor() {
                     value={textColor} onChange={(e) => updateConfig('button', 'textColor', e.target.value)} 
                 />
             </Container>
-        </EditorSection>
+        </EditorPanel>
     );
 }
