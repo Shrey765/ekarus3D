@@ -75,7 +75,7 @@ style={{ gap: `${config.gallery.spacing}px` }}
 <img
   src={activeImage}
   alt="Main product preview"
-  className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] object-cover rounded-lg border border-gray-200"
+  className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] object-contain rounded-lg border border-gray-200"
 />
 </div>
     </div>
@@ -191,7 +191,7 @@ style={{ gap: `${config.gallery.spacing}px` }}
     </div>
 
     <div
-      className="mt-4 sm:mt-6 bg-transparent pt-4 sm:pt-6 border-t bg-white/70 rounded-lg flex flex-wrap gap-4 justify-between items-center sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+      className="mt-4 p-4 sm:mt-6 bg-transparent border-t bg-white/70 rounded-lg flex flex-wrap gap-4 justify-between items-center sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
       style={{ borderColor: config.stroke.color }}
     >
       <div className="flex justify-between items-center">
