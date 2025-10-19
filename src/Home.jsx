@@ -8,9 +8,9 @@ export default function Home() {
   const { config } = useConfig();
 
   const thumbnailUrls = [
-   "/public/5195e6b8b861c8d84d8f55db44fef19e6d989ae7.png",
-   "/public/8228a33a12a1e22ec18d766745eab139594f0215.png",
-   "/public/bb042f9d31623b22d3915b62c0a3e1da09371b30.png"
+   "/5195e6b8b861c8d84d8f55db44fef19e6d989ae7.png",
+   "/8228a33a12a1e22ec18d766745eab139594f0215.png",
+   "/bb042f9d31623b22d3915b62c0a3e1da09371b30.png"
   ];
 
    const [activeImage, setActiveImage] = useState(thumbnailUrls[0]);
