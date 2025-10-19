@@ -9,8 +9,7 @@ const AccordionItem = ({ id, title, current, children }) => {
 
   return (
     <div
-      className="border bg-white rounded-lg overflow-hidden transition-shadow
-                 hover:shadow-sm"
+      className="border bg-white rounded-lg overflow-hidden transition-shadow hover:shadow-sm"
       style={{
         borderRadius: `${config.general.cardBorderRadius}px`,
         borderColor: config.stroke.color,
@@ -18,16 +17,13 @@ const AccordionItem = ({ id, title, current, children }) => {
       }}
     >
       <button
-        className={`w-full flex justify-between items-center gap-3
-                    px-4 py-3 text-left
-                    bg-white hover:bg-gray-50 focus:outline-none
-                    focus-visible:ring-2 focus-visible:ring-indigo-500`}
+        className={`w-full flex justify-between items-center gap-3 px-3 sm:px-4 py-3 text-left bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500`}
         onClick={() => setActiveAccordion(open ? null : id)}
         aria-expanded={open}
         aria-controls={`${id}-panel`}
       >
         <span className="font-medium text-gray-800">{title}</span>
-        <span className="shrink-0 inline-flex items-center gap-2 text-sm text-gray-500">
+        <span className="shrink-0 inline-flex items-center gap-2 text-xs sm:text-sm text-gray-500">
           {current}
           <svg
             className={`h-4 w-4 transition-transform ${open ? "rotate-180" : "rotate-0"}`}

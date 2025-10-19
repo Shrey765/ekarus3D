@@ -14,7 +14,7 @@ const Select = forwardRef(function Select(
   return (
     <div className="select w-full">
       {label && (
-        <label className="label" htmlFor={id}>
+        <label className="label block text-xs font-medium text-gray-700 mb-1" htmlFor={id}>
           {label}
         </label>
       )}

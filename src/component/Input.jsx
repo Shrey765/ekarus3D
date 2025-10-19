@@ -20,7 +20,7 @@ const Input = forwardRef(function Input(
   return (
     <div className={`w-full ${isColor ? "flex items-center gap-3" : ""}`} data-range-id={isRange ? rangeScopeId : undefined}>
       {label && (
-        <label className="label" htmlFor={id}>
+        <label className="label block text-xs font-medium text-gray-700 mb-1" htmlFor={id}>
           {label}
         </label>
       )}
@@ -36,7 +36,7 @@ const Input = forwardRef(function Input(
             {...props}
           />
           {/* live color value */}
-          <span className="text-xs text-gray-600 px-2 py-1 bg-gray-100 rounded-md font-mono">
+          <span className="text-[11px] sm:text-xs text-gray-600 px-2 py-1 bg-gray-100 rounded-md font-mono">
             {props.value?.toUpperCase()}
           </span>
         </div>
