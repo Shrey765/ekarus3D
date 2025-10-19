@@ -1,38 +1,41 @@
-import {useId, forwardRef} from 'react';
+import { useId, forwardRef } from 'react';
 
-const Select = forwardRef(function Select({
+const Select = forwardRef(function Select(
+  {
     label,
-    className,
+    className = '',
     options = [],
     ...props
-}, ref){
-    const id = useId();
-    return(
-        <div className='select'>
-            {label && <label className='label' htmlFor={id}>
-                {label}
-            </label>}
-            <select 
-                id={id}
-                className={`w-full text-sm border-gray-300 rounded-md shadow-sm 
-                    focus:ring-indigo-500 focus:border-indigo-500 ${className}`}
-                ref={ref}
-                {...props}
-            >
-                {options?.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
-        </div>
-    )
-})
+  },
+  ref
+) {
+  const id = useId();
+
+  return (
+    <div className="select w-full">
+      {label && (
+        <label className="label" htmlFor={id}>
+          {label}
+        </label>
+      )}
+      <select
+        id={id}
+        ref={ref}
+        className={`w-full text-sm rounded-lg border border-gray-300 bg-white
+                    px-3 py-2 shadow-sm
+                    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
+                    disabled:opacity-60 disabled:cursor-not-allowed
+                    transition-colors ${className}`}
+        {...props}
+      >
+        {options?.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+});
 
 export default Select;
-
-{/*const options = [
-  { value: 'apple', label: 'Apple' },
-  { value: 'banana', label: 'Banana' },
-  { value: 'cherry', label: 'Cherry' }
-];*/}

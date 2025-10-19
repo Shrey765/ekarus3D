@@ -2,16 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .label{
-    @apply block text-xs font-medium text-gray-500 mb-1.5;
+/* ---------- Components layer: shared atoms ---------- */
+@layer components {
+  .color-cute-input {
+    @apply w-10 h-10 rounded-xl cursor-pointer border border-gray-300 bg-white
+           shadow-sm transition-all duration-200;
   }
 
-  .select{
-    @apply min-w-[120px] rounded-md border border-[#ccc] bg-white px-2.5 py-1.5 text-sm font-['Inter',_sans-serif];
+  .color-cute-input:hover {
+    @apply border-indigo-300 shadow-md;
   }
 
-  .color-input{
-    @apply w-full h-10 p-1 bg-white border border-gray-300 rounded-md cursor-pointer;
+  .color-cute-input:focus {
+    @apply outline-none ring-2 ring-indigo-400 border-indigo-400;
+  }
+
+  .color-cute-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  .color-cute-input::-webkit-color-swatch {
+    border-radius: 10px;
+    border: none;
+  }
+}
+
+
+/* ---------- Base: fine-tune scrollbars for webkit ---------- */
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgb(229 231 235); /* gray-200 */
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(209 213 219); /* gray-300 */
+}
+
+/* Tiny shadow for cards without going heavy */
+@layer utilities {
+  .shadow-xs {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   }
 }

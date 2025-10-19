@@ -11,8 +11,9 @@ export default function ButtonEditor() {
             <Container>
                 <Input 
                     label="Border Radius (px)"
-                    type="number" 
+                    type="range" 
                     min="0" 
+                    max="25"
                     value={borderRadius} 
                     onChange={(e) => updateConfig('button', 'borderRadius', Number(e.target.value))}
                  />
@@ -55,7 +56,7 @@ export default function ButtonEditor() {
                 <Input 
                     label="Text Color"
                     type='color'
-                    className="color-input"
+                    className="color-input ml-7"
                     value={textColor} onChange={(e) => updateConfig('button', 'textColor', e.target.value)} 
                 />
             </Container>

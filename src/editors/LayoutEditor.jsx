@@ -20,6 +20,7 @@ export default function LayoutEditor() {
             </Container>
             <Container>
                  <Input 
+                    label="Font Weight"
                     type="number" 
                     min="0" 
                     value={config.general.cardBorderRadius} onChange={(e) => updateConfig('general', 'cardBorderRadius', Number(e.target.value))} 
@@ -28,7 +29,7 @@ export default function LayoutEditor() {
             <Container>
                 <Input 
                     label="Container Padding (px)"
-                    type="number" min="0" 
+                    type="range" min="0" 
                     value={config.general.containerPadding} 
                     onChange={(e) => updateConfig('general', 'containerPadding', Number(e.target.value))} 
                 />
@@ -36,7 +37,11 @@ export default function LayoutEditor() {
              <Container>
                 <Input 
                     label="Section Background"
-                    className='color-input'
+                    className='h-10 rounded-xl cursor-pointer 
+                        border border-gray-300 bg-white
+                        shadow-sm transition-all duration-200
+                        focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400
+                        hover:border-indigo-300 hover:shadow-md;'
                     type='color'
                     value={config.general.sectionBackgroundColor} 
                     onChange={(e) => updateConfig('general', 'sectionBackgroundColor', e.target.value)} />
