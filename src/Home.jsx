@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useConfig } from "./context/ConfigProvider";
 import { Button } from "./component";
 import AccordionItem from "./AccordionItem";
@@ -5,6 +6,14 @@ import ColorSwatch from "./utils/ColorSwitch";
 
 export default function Home() {
   const { config } = useConfig();
+
+  const thumbnailUrls = [
+   "/public/5195e6b8b861c8d84d8f55db44fef19e6d989ae7.png",
+   "/public/8228a33a12a1e22ec18d766745eab139594f0215.png",
+   "/public/bb042f9d31623b22d3915b62c0a3e1da09371b30.png"
+  ];
+
+   const [activeImage, setActiveImage] = useState(thumbnailUrls[0]);
 
   const layoutClasses =
     config.layout === "layout-1" ? "lg:flex-row" : "lg:flex-row-reverse";
@@ -30,19 +39,18 @@ export default function Home() {
     >
       {/* -------- Left: Gallery (sticky) -------- */}
       <div
-        className={`
-          flex-1
-          lg:sticky lg:top-6 lg:self-start
-          lg:max-h-[calc(100vh-3rem)]
-          overflow-auto custom-scroll
-        `}
+        className={`flex-1 lg:sticky lg:top-6 lg:self-start lg:max-h-[calc(100vh-3rem)]
+                    overflow-auto custom-scroll`}
       >
         <div className={`flex flex-col ${galleryLayoutClasses} gap-4 lg:gap-6`}>
+
+          {/* ✅ Thumbnail Holder */}
           <div
             className={`flex ${thumbnailDirectionClasses} ${config.gallery.alignment}
                         overflow-auto custom-scroll`}
             style={{ gap: `${config.gallery.spacing}px` }}
           >
+<<<<<<< HEAD
             {/* Thumbnails placeholder */}
             <div
               className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
@@ -64,6 +72,31 @@ export default function Home() {
               className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg border border-gray-200"
               role="img"
               aria-label="Main product preview"
+=======
+            {thumbnailUrls.map((url, index) => (
+              <img
+                key={index}
+                src={url}
+                alt={`Thumbnail ${index + 1}`}
+                onClick={() => setActiveImage(url)}
+                className={`w-16 h-16 lg:w-20 lg:h-20 object-cover cursor-pointer
+                            rounded-md border transition-all duration-200 
+                            ${activeImage === url
+                              ? "ring-2 ring-offset-2 ring-indigo-500"
+                              : "hover:opacity-80 border-gray-300"}`}
+                style={{ borderRadius: `${config.gallery.borderRadius}px` }}
+              />
+            ))}
+          </div>
+
+          {/* ✅ Main Image */}
+          <div className="flex-grow">
+            <img
+              src={activeImage}
+              alt="Main preview"
+              className="w-full object-cover rounded-lg border border-gray-200 transition-all duration-300"
+              style={{ borderRadius: `${config.gallery.borderRadius}px` }}
+>>>>>>> 29fa19e (images and hamberger)
             />
           </div>
         </div>
