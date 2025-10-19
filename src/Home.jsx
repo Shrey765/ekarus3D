@@ -179,7 +179,7 @@ export default function Home() {
         </div>
 
         <div
-          className="mt-6 lg:mt-auto pt-6 border-t bg-white/70 sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+          className="mt-6 bg-transparent pt-6 border-t bg-white/70 rounded-lg flex justify-center items center sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
           style={{ borderColor: config.stroke.color }}
         >
           <div className="flex justify-between items-center mb-4">
@@ -193,7 +193,7 @@ export default function Home() {
 
           <div className={`flex ${config.button.alignment}`}>
             <Button
-              className={`text-white font-bold py-3 px-6 transition-all duration-200 ${config.button.shadow}
+              className={`text-white ml-4 font-bold py-3 px-6 transition-all duration-200 ${config.button.shadow}
                           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
                           active:scale-[0.98]`}
               style={{
