@@ -44,7 +44,6 @@ return (
   >
     <div className={`flex flex-col ${galleryLayoutClasses} gap-4 lg:gap-6`}>
 
-      {/* ✅ Thumbnail Holder */}
       <div
 className={`flex ${thumbnailDirectionClasses} ${config.gallery.alignment} overflow-auto custom-scroll`}
 style={{ gap: `${config.gallery.spacing}px` }}
@@ -191,21 +190,21 @@ style={{ gap: `${config.gallery.spacing}px` }}
     </div>
 
     <div
-      className="mt-4 p-4 sm:mt-6 bg-transparent border-t bg-white/70 rounded-lg flex flex-wrap gap-4 justify-between items-center sticky bottom-0 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+      className="mt-4 p-4 sm:mt-6 bg-transparent border-t bg-white/70 rounded-lg
+                flex flex-col sm:flex-row gap-4 sticky bottom-0 backdrop-blur
+                supports-[backdrop-filter]:bg-white/60"
       style={{ borderColor: config.stroke.color }}
     >
-      <div className="flex justify-between items-center">
-        <div>
-          <p className="text-xs uppercase tracking-wide text-gray-500">
-            Product Price
-          </p>
-          <p className="text-xl sm:text-2xl font-bold text-gray-900">$ 200</p>
-        </div>
+      <div>
+        <p className="text-xs uppercase tracking-wide text-gray-500">
+          Product Price
+        </p>
+        <p className="text-xl sm:text-2xl font-bold text-gray-900">$ 200</p>
       </div>
 
-      <div className={`flex ${config.button.alignment}`}>
+      <div className={`flex flex-1 ${config.button.alignment}`}>
         <Button
-          className={`text-white ml-0 sm:ml-4 font-bold py-2.5 sm:py-3 px-5 sm:px-6 transition-all duration-200 ${config.button.shadow}
+          className={`text-white font-bold py-2.5 sm:py-3 px-5 sm:px-6 transition-all duration-200 ${config.button.shadow}
                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
                       active:scale-[0.98]`}
           style={{
@@ -218,6 +217,7 @@ style={{ gap: `${config.gallery.spacing}px` }}
         </Button>
       </div>
     </div>
+
   </div>
 </div>
 );
