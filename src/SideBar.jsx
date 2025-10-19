@@ -36,23 +36,7 @@ function SideBar() {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="w-full lg:w-[360px] bg-gray-600 border-r border-gray-300 flex flex-col shadow-sm">
-=======
-    <aside
-      className={[
-        // base
-        'bg-gray-600 border-r border-gray-300 flex flex-col shadow-sm',
-        'transition-all duration-300 ease-in-out',
-        'overflow-hidden',                 // prevents content peeking during width animation
-        // width modes
-        collapsed ? 'w-16' : 'w-[360px]',
-        // subtle gradient & inner border accent when collapsed
-        collapsed ? 'bg-gradient-to-b from-gray-700 to-gray-600' : '',
-      ].join(' ')}
-      aria-label="Editor sidebar"
-    >
->>>>>>> 29fa19e (images and hamberger)
+    <aside className="w-full lg:w-[360px] bg-gray-600 border-r border-gray-300 flex flex-col shadow-sm">
       {/* Header */}
       <div
         className={[

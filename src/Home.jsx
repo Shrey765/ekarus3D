@@ -50,7 +50,6 @@ export default function Home() {
                         overflow-auto custom-scroll`}
             style={{ gap: `${config.gallery.spacing}px` }}
           >
-<<<<<<< HEAD
             {/* Thumbnails placeholder */}
             <div
               className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 shrink-0 bg-gray-100 rounded-md border border-gray-200`}
@@ -72,31 +71,6 @@ export default function Home() {
               className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg border border-gray-200"
               role="img"
               aria-label="Main product preview"
-=======
-            {thumbnailUrls.map((url, index) => (
-              <img
-                key={index}
-                src={url}
-                alt={`Thumbnail ${index + 1}`}
-                onClick={() => setActiveImage(url)}
-                className={`w-16 h-16 lg:w-20 lg:h-20 object-cover cursor-pointer
-                            rounded-md border transition-all duration-200 
-                            ${activeImage === url
-                              ? "ring-2 ring-offset-2 ring-indigo-500"
-                              : "hover:opacity-80 border-gray-300"}`}
-                style={{ borderRadius: `${config.gallery.borderRadius}px` }}
-              />
-            ))}
-          </div>
-
-          {/* ✅ Main Image */}
-          <div className="flex-grow">
-            <img
-              src={activeImage}
-              alt="Main preview"
-              className="w-full object-cover rounded-lg border border-gray-200 transition-all duration-300"
-              style={{ borderRadius: `${config.gallery.borderRadius}px` }}
->>>>>>> 29fa19e (images and hamberger)
             />
           </div>
         </div>
