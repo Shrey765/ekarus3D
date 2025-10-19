@@ -24,7 +24,7 @@ const defaultConfig = {
   general: {
     cardBorderRadius: 12, 
     containerPadding: 24, 
-    sectionBackgroundColor: "#FFFFFF",
+    sectionBackgroundColor: "#A4A8E5",
   },
   stroke: {
     color: "#E0E0E0",
